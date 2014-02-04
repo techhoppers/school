@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define Charset -->
+    <meta charset="utf-8"/>
+
+   <!-- Page Title -->
+   <title>School Name Title</title>
+
+   <!-- Responsive Metatag -->    
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Page Description and Author -->
+   <meta name="description" content="Diploma - Responsive Bootstrap 3 Landing Page Template">
+   <meta name="author" content="Coralix Themes">
+   
+   <!-- Stylesheet
+   ===================================================================================================  -->
+   <%= stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => true %>
+    <!--[if IE 7]>
+    <link href="/assets/font/fontello-ie7.css" rel="stylesheet" ><![endif]-->
+
+   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+   <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.js"></script>        
+   <![endif]-->
+
+   <!-- Media queries -->
+   <!--[if lt IE 9]>
+   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+   <![endif]-->
+   <script src="/assets/modernizr.custom.js"></script>
+ <%= csrf_meta_tags %>
+  </head>
+
+
+<body>
+    <!--Header -->
+    <header class="navbar-fixed-top animated fadeInDown delay1">
+		<div class="container">
+            <div class="row">         
+            <!-- Static navbar -->
+            <div class="navbar navbar-default">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            
+            <h1 class="logo">
+            <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="Logo" /></a>
+            </h1> 
+            
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+            <li><a href="#menu-jumbotron">Home</a></li>
+            <li><a href="#menu-features">Features</a></li>
+            <li><a href="#menu-gallery">Gallery</a></li>
+            <li><a href="#menu-video">Video</a></li>
+            <li><a href="#menu-information">Information</a></li>
+            <li><a href="#menu-classes">Classes</a></li>
+            <li><a href="#menu-wall">Kids</a></li>
+            <li><a href="http://themeforest.net/user/CoralixThemes/portfolio" class="external">External</a></li>
+            </ul>
+            </div><!--/.nav-collapse -->
+            </div>
+            <!-- end Static navbar -->  
+            
+            </div>
+      </div>
+      <!-- end container -->  
+                
+    </header>
+    <!-- end Header -->
+
+
+    <!-- slider -->
+    <section class="jumbotron animated fadeInUp delay2" id="menu-jumbotron">
+		<div class="container"> 
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Education is great!</h1>
+					<h2>Are you looking the best School for your child?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+					<form id="contact" class="row suscribe" action="contact-form.php" method="post" accept-charset="utf-8">
+						<div class="col-sm-6">
+							<input type="text" class="form-control" placeholder="Name" name="name">
+							<input type="text" class="form-control" placeholder="Email" name="email">
+						</div>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" placeholder="Lastname" name="lastname">
+							<input type="text" class="form-control" placeholder="Phone" name="phone">
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn text-center">Request Information</button>
+						</div>		
+					</form>
+				</div>
+				<div class="col-md-6">
+					<img src="/assets/big-image.png" alt="image" class="figure">
+				</div>
+			</div>   
+		</div>
+    </section>
+    <!-- end slider -->
+
+
+
+   <!-- Features -->
+   <section id="menu-features" class="generic features animated fadeInUp delay3">
+      <div class="container">
+
+         <!-- title -->
+         <div class="row text-center title">
+           <h1>The future is waiting for you</h1>
+           <h2>Quisque eu lectus at sem imperdiet aliqua and pendisse a hendsumellus nec turpis sed tellus.</h2>
+         </div>
+         <!-- end title -->
+
+         <!-- items -->
+         <div class="row">
+
+            <div class="col-md-3 text-center item">
+               <i class="icon-pencil"></i>
+               <h3> Software Engineering</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center item">
+               <i class="icon-lamp"></i>
+               <h3>Analytical Chemistry</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center item">
+               <i class="icon-brush"></i>
+               <h3>Graphic Designer</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+            <div class="col-md-3 text-center item">
+               <i class="icon-tools"></i>
+               <h3>Systems Management</h3>
+               <p> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat. </p>
+            </div>
+
+         </div>
+         <!-- end items -->
+		 <div class="row">
+			<div class="col-xs-12 vertical_line text-center">
+            	<a href="#myModal" class="btn scroll_btn" data-toggle="modal">Request a quote now!</a>    
+            </div>
+                    
+        </div>
+      </div>     
+   </section>
+   <!-- end Features -->
+
+
+
+  <!-- Modal form lightbox -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Contact Us</h4>
+        </div>
+        <div class="modal-body">
+    			<form role="form" id="request" action="request-form.php" method="post" accept-charset="utf-8">
+    			  <div class="form-group">
+    			    <label class="no">Name</label>
+    			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name" name="name">
+    			  </div>
+    			  <div class="form-group">
+    			    <label class="no">Email</label>
+    			    <input type="text" class="form-control" placeholder="Enter your email" name="email">
+    			  </div>
+    			  <div class="form-group">
+    			    <label class="no">Subject</label>
+    			    <input type="text" class="form-control" placeholder="Subject" name="subject">
+    			  </div>
+    			  <div class="form-group">
+    			    <textarea class="form-control" rows="3" placeholder="Add your text here" name="textmessage"></textarea>
+    			  </div>
+    			  <button type="submit" class="btn btn-default">Submit</button>
+    			</form>
+          
+        </div>
+        <div class="modal-footer"></div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+  <!-- end Modal form lightbox -->
+
+
+
+    <!-- Gallery -->
+    <section id="menu-gallery" class="generic gallery">
+        <div class="container">
+        
+            <!-- title -->
+           <div class="row text-center title">
+             <h1>Classes Image Gallery</h1>
+             <h2> Nulla ornare tortor quis rhoncus vulputat and amus a enim vel erat accumsan hendrerit.</h2>
+           </div>
+           <!-- end title -->
+                  
+            <div class="row cs-style-3">
+                
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/01.jpg" data-lightbox="example-set" title="Music Classes">
+                <figure>
+                  <img src="/assets/01.jpg" alt="img01">
+                  <figcaption class="text-center">
+                    <h3>Music Classes</h3>
+                    <h4>Guitar, piano and more!</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/02.jpg" data-lightbox="example-set" title="Title of the image">
+                <figure>
+                  <img src="/assets/02.jpg" alt="img02">
+                  <figcaption class="text-center">
+                    <h3>Title of the image</h3>
+                    <h4>Small description</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/03.jpg" data-lightbox="example-set" title="Title of the image">
+                <figure>
+                  <img src="/assets/03.jpg" alt="img03">
+                  <figcaption class="text-center">
+                    <h3>Title of the image</h3>
+                    <h4>Small description</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+          </div><!-- end row -->
+    
+          <div class="row cs-style-3">
+              
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/04.jpg" data-lightbox="example-set" title="Title of the image">
+                <figure>
+                  <img src="/assets/04.jpg" alt="img01">
+                  <figcaption class="text-center">
+                    <h3>Title of the image</h3>
+                    <h4>Small description</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/05.jpg" data-lightbox="example-set" title="Nice Food">
+                <figure>
+                  <img src="/assets/05.jpg" alt="img02">
+                  <figcaption class="text-center">
+                    <h3>Nice Food</h3>
+                    <h4>Small description</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+              <div class="col-sm-4 gitem">
+                <a class="example-image-link" href="/assets/06.jpg" data-lightbox="example-set" title="Natural Park">
+                <figure>
+                  <img src="/assets/06.jpg" alt="img03">
+                  <figcaption class="text-center">
+                    <h3>Natural Park</h3>
+                    <h4>Small description</h4>
+                  </figcaption>
+                </figure> 
+                </a>               
+              </div>
+    
+          </div><!-- end row -->
+    
+        </div>
+    </section>
+    <!-- end Gallery -->
+
+
+	<!-- Space -->
+	<section class="space generic" id="menu-video">   
+		<div class="container">
+		  <div class="row">
+
+		    <div class="col-md-4">
+		      <h1>School Building Video Tour</h1>
+		      <p>Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat accumsan hendrerit. Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat accumsan hendrerit.</p>
+		      <ul>
+				<li><a href="#"> <i class="glyphicon glyphicon-ok"></i>Nulla ornare tortor quis rhoncus vulputate.</a> </li>
+				<li><a href="#"> <i class="glyphicon glyphicon-ok"></i>Vivamus a enim vel erat accumsan hendrerit. </a> </li>
+				<li><a href="#"> <i class="glyphicon glyphicon-ok"></i>Nulla ornare tortor quis rhoncus vulputate.</a> </li>
+				<li><a href="#"> <i class="glyphicon glyphicon-ok"></i>Retina Display for Mobile HD Devices.</a> </li>
+				<li><a href="#"> <i class="glyphicon glyphicon-ok"></i>Vivamus asan 12,000 happy costumers.</a> </li>
+		      </ul>   
+		    </div>
+
+		    <div class="col-md-8">
+				<div class="video">
+                	<iframe src="http://player.vimeo.com/video/4240369?title=0&amp;byline=0&amp;portrait=0" height="425" allowFullScreen></iframe>
+                </div>        
+		    </div>
+
+		  </div>
+		</div>      
+	</section>
+	<!-- end Space -->
+
+
+
+	<!-- Information -->
+	<section id="menu-information" class="generic info">
+        <div class="container">
+        
+           <!-- title -->
+           <div class="row text-center title">
+           		<h1>Get all the information</h1>
+           		<h2> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat accumsan hendrerit.</h2>
+           </div>
+           <!-- end title -->
+                  
+           <div class="row infoitem">
+           	  	<div class="col-md-6">
+           	  		<a class="example-image-link" href="/assets/info-01.jpg" data-lightbox="example-set" title="Title Example">
+                		<img src="/assets/info-01.jpg" alt="image">
+                	</a>
+                </div>
+                <div class="col-md-6">
+                	<h2>We are too good to be true</h2>
+                    <h3>We have added swipe function to Bootstrap carousel. It can be any width, depends of the layout that you want. This one is 1/2 width. You can find full width slider in header of section.</h3>
+                    <p>There's a fire starting in my heart, Reaching a fever pitch and it's bringing me out the dark. Finally, I can see you crystal clear, Go ahead and sell me out and I'll lay your ship bare, See how I'll leave with every piece of you.</p>
+                    <a href="#" class="btn btn-default">Read more</a>
+                </div>
+           </div>
+ 
+            <div class="row infoitem">
+           	  	<div class="col-md-6">
+                	<h2>Learn and play all the time</h2>
+                    <h3>We have added swipe function to Bootstrap carousel. It can be any width, depends of the layout that you want. This one is 1/2 width. You can find full width slider in header of section.</h3>
+                    <p>There's a fire starting in my heart, Reaching a fever pitch and it's bringing me out the dark. Finally, I can see you crystal clear, Go ahead and sell me out and I'll lay your ship bare, See how I'll leave with every piece of you.</p>
+                    <a href="#" class="btn btn-default">Read more</a>                	
+                </div>
+                <div class="col-md-6">
+                  <a class="example-image-link" href="/assets/info-02.jpg" data-lightbox="example-set" title="Title Example">
+                		<img src="/assets/info-02.jpg" alt="image">
+                  </a>
+                </div>
+           </div>
+           
+            <div class="row infoitem">
+           	  	<div class="col-md-6">
+           	  		<a class="example-image-link" href="/assets/info-03.jpg" data-lightbox="example-set" title="Title Example 3">
+                		<img src="/assets/info-03.jpg" alt="image">
+                	</a>
+                </div>
+                <div class="col-md-6">
+                	<h2>The best classes for Kids</h2>
+                    <h3>We have added swipe function to Bootstrap carousel. It can be any width, depends of the layout that you want. This one is 1/2 width. You can find full width slider in header of section.</h3>
+                    <p>There's a fire starting in my heart, Reaching a fever pitch and it's bringing me out the dark. Finally, I can see you crystal clear, Go ahead and sell me out and I'll lay your ship bare, See how I'll leave with every piece of you.</p>
+                    <a href="#" class="btn btn-default">Read more</a>
+                </div>
+           </div>          
+                     
+    	</div>
+	</section>  
+	<!-- end Information -->
+
+    <!-- Classes Tables -->
+    <section id="menu-classes" class="generic classes">
+        <div class="container">
+        
+          <!-- title -->
+          <div class="row text-center title">
+            <h1>Some Classes Example</h1>
+            <h2> Nulla ornare tortor quis rhoncus vulputate. Vivamus a enim vel erat accumsan hendrerit.</h2>
+          </div>
+          <!-- end title -->
+
+          <div class="row">
+
+            <!-- table 1 -->
+            <div class="col-md-3">
+              <div class="item">
+                <div class="ch-item ch-img-1 thumb">
+                <div class="ch-info">
+                <p><a href="#">Guitar <br />Classes </a></p>
+                </div>
+                </div>
+                <ul>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Mathematic everyday </li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Cooking Lessons with love</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Yoga Teacher on Friday</li>
+                </ul> 
+              </div>
+            </div>
+
+            <!-- table 2 -->
+            <div class="col-md-3">
+              <div class="item">
+                <div class="ch-item ch-img-2 thumb">
+                <div class="ch-info">
+                <p><a href="#">Guitar <br />Classes </a></p>
+                </div>
+                </div>
+                <ul>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Mathematic everyday </li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Cooking Lessons with love</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Yoga Teacher on Friday</li>
+                </ul> 
+              </div>
+            </div>
+
+            <!-- table 3 -->
+            <div class="col-md-3">
+              <div class="item">
+                <div class="ch-item ch-img-3 thumb">
+                <div class="ch-info">
+                <p><a href="#">Guitar <br />Classes </a></p>
+                </div>
+                </div>
+                <ul>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Mathematic everyday </li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Cooking Lessons with love</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Yoga Teacher on Friday</li>
+                </ul> 
+              </div>
+            </div>
+
+            <!-- table 4 -->
+            <div class="col-md-3">
+              <div class="item">
+                <div class="ch-item ch-img-4 thumb">
+                <div class="ch-info">
+                <p><a href="#">Guitar <br />Classes </a></p>
+                </div>
+                </div>
+                <ul>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Mathematic everyday </li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Cooking Lessons with love</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Dance Classes Example</li>
+                  <li><i class="glyphicon glyphicon-ok"></i> Yoga Teacher on Friday</li>
+                </ul> 
+              </div>
+            </div>
+
+        	</div> <!-- end row -->                   
+    	</div>
+    </section>  
+    <!-- end Classes Tables -->
+
+
+	
+	<!--Twitter Widget-->
+    <section id="twitter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <i class="icon-twitter"></i>
+                    <h3 class="username" ></h3>
+                	<p class="tweet twitterfeed" >                    
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!-- end Twitter Widget-->
+
+
+
+	<!--Newsletter-->
+	<section class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+          <form id="newsletter" class="formNewsletter nm" action="newsletter.php" method="post" accept-charset="utf-8" role="form">          
+            <div class="row">
+              <div class="col-xs-12 fields">
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <h3>Stay in touch by email for updates and offers</h3>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <div class="row">
+                      <input type="email" class="form-control col-md-12" placeholder="Your email here..." name="Email" value="" />  
+                      <input class="btn btn-large btn-primary col-md-12" type="submit" name="submit" value="SUSCRIBE NOW" id="submit"/>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Newsletter-->    
+
+
+
+    
+	<!-- Footer -->
+	<footer>
+    	<div class="container">
+            <div class="row copy">
+            	<div class="col-sm-6">
+                	<h6>© 2014 Coralix Themes. Aenean lacinia bibendum nulla sed consectetur.</h6>
+              </div>
+              <div class="col-sm-6">
+                <ul>
+                  <li><a href="#"><i class="icon-twitter"></i></a></li>
+                  <li><a href="#"><i class="icon-facebook"></i></a></li>
+                  <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                  <li><a href="#"><i class="icon-vimeo"></i></a></li>
+                  <li><a href="#"><i class="icon-behance"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            
+        </div>
+    </footer>   
+    <!-- end Footer --> 
+    
+    
+    
+    
+  <a href="#" class="scrollup"><i class="icon-up-open"></i></a>      
+
+
+
+    
+ <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+    
+
+  <!-- ======================= End JQuery libs ======================= -->
+
+
+</body>
+</html>

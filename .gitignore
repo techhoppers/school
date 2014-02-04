@@ -1,0 +1,6 @@
+log/
+tmp/
+Gemfile.lock
+
+
+nbproject/

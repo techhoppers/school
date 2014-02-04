@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>School Name - Admin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<%= stylesheet_link_tag "admin", :media => "all", "data-turbolinks-track" => true %>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+           <%= javascript_include_tag "html5shiv.js", "data-turbolinks-track" => true %>
+           <%= javascript_include_tag "respond.min.js", "data-turbolinks-track" => true %>
+        <![endif]-->
+    </head>
+    <body class="bootstrap-admin-with-small-navbar">
+        <!-- small navbar -->
+       <%= render "shared/admin_nav" %>
+
+        <!-- main / large navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="about.html">School Admin</a>
+                    </div>
+                    <div class="collapse navbar-collapse main-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-hover="dropdown">Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li role="presentation" class="dropdown-header">Dropdown header</li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="presentation" class="divider"></li>
+                                    <li role="presentation" class="dropdown-header">Dropdown header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div><!-- /.container -->
+        </nav>
+
+        <div class="container">
+            <!-- left, vertical navbar & content -->
+            <div class="row">
+                <!-- left, vertical navbar -->
+                <div class="col-md-2 bootstrap-admin-col-left">
+                    <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                        <li class="<%= @tab == :dashboard ? "active" : "" %>">
+                            <a href="/admin"><% if @tab == :dashboard %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %>  Dashboard</a>
+                        </li>
+                        <li class="<%= @tab == "student" ? "active" : "" %>">
+                          <a href="<%= users_path(:user_type => "student") %>"><% if @tab == "student" %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Students</a>
+                        </li>
+                        <li class="<%= @tab == :standard ? "active" : "" %>">
+                          <a href="<%= standards_path %>"><% if @tab == :standard %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Standards</a>
+                        </li>
+                        <li class="<%= @tab == :division ? "active" : "" %>">
+                          <a href="<%= divisions_path %>"><% if @tab == :division %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Divisions</a>
+                        </li>
+                        <li class="<%= @tab == "teacher" ? "active" : "" %>">
+                          <a href="<%= users_path(:user_type => "teacher") %>"><% if @tab == "teacher" %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Teachers</a>
+                        </li>
+                         <li class="<%= @tab == :subject ? "active" : "" %>">
+                           <a href="<%= subjects_path %>"><% if @tab == :subject %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Subjects</a>
+                        </li>
+                         <li class="<%= @tab == :upload ? "active" : "" %>">
+                           <a href="<%= bulk_upload_users_path %>"><% if @tab == :upload %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Bulk Upload</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- content -->
+                <div class="col-md-10">
+                	<% if notice %>
+                    	<div class="row">
+                        	<div class="alert alert-success bootstrap-admin-alert">
+                            	<button type="button" class="close" data-dismiss="alert">×</button>
+                            	<p class="notice"><%= notice %></p>
+                        	</div>
+                    </div>
+                    <% end %>
+
+					<%= yield %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-footer">
+            <div class="container">
+                <div class="row">
+                    <footer role="contentinfo">
+                        <p class="left">School Name</p>
+                        <p class="right">&copy; 2014 <a href="/" target="_blank">School Name</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+       <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+.<div class="row">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+          <div class="text-muted bootstrap-admin-box-title">Bulk Upload</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <table class="table table-striped">
+      <div id="hero-area">
+        <tr>
+          <td>
+        <%= form_for(:dump, :url=>{:controller=>"users",:action=>"csv_import"}, :html => {:multipart => true, :class => "form-horizontal" }) do |f| %>
+          <div class="control-group"><%= f.label "Select File", :class => "control-label" %>
+            <div class="controls">
+              <%= f.file_field :file, :class => "input-file uniform_on" %>
+              <span class="help-inline"><i>(Choose the csv file containing the user details to import)</i></span>
+            </div>
+          </div>        
+
+          <div><%= f.submit "Upload", :class => "btn btn-primary" %>  <%= link_to "Back", :back, :class => "btn" %></div>
+        <% end %>
+          </div>
+          </td>
+        </tr>
+        </table>
+      
+    </div>
+  </div>
+</div>
