@@ -1,4 +1,4 @@
 school
 ======
 
-Application for schools
+App for Schools
