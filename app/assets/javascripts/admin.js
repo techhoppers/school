@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap.min
 //= require twitter-bootstrap-hover-dropdown.min
 //= require turbolinks

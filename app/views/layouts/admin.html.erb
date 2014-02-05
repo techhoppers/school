@@ -11,6 +11,7 @@
            <%= javascript_include_tag "html5shiv.js", "data-turbolinks-track" => true %>
            <%= javascript_include_tag "respond.min.js", "data-turbolinks-track" => true %>
         <![endif]-->
+        <%= csrf_meta_tags %>
     </head>
     <body class="bootstrap-admin-with-small-navbar">
         <!-- small navbar -->
@@ -91,7 +92,7 @@
                             	<p class="notice"><%= notice %></p>
                         	</div>
                          </div>
-                    <% end %>
+                        <% end %>
 
 					<%= yield %>
 

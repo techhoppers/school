@@ -10,6 +10,7 @@ SchoolApp::Application.routes.draw do
    resources :standards
    resources :divisions
    resources :subjects
+   
    resources :users do
    collection do
       get 'index'

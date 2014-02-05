@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :first_name, :presence => true 
+  validates :phone1, :presence => true 
+  validates :role, :presence => true 
+  validates :encrypted_password, :presence => true
+  
   def is_admin?
     role == "ADMIN"
   end

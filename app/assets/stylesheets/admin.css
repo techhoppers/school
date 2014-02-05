@@ -13,3 +13,7 @@
  *= require bootstrap-admin-theme
  *= require_self
  */
+ .add-new{
+     text-align: right;
+     margin-right: 10px;
+ }
