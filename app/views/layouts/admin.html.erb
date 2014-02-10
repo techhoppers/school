@@ -62,14 +62,11 @@
                         <li class="<%= @tab == :dashboard ? "active" : "" %>">
                             <a href="/admin"><% if @tab == :dashboard %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %>  Dashboard</a>
                         </li>
+                        <li class="<%= @tab == "academic" ? "active" : "" %>">
+                          <a href="<%= academics_path %>"><% if @tab == "academic" %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Academics</a>
+                        </li>
                         <li class="<%= @tab == "student" ? "active" : "" %>">
                           <a href="<%= users_path(:user_type => "student") %>"><% if @tab == "student" %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Students</a>
-                        </li>
-                        <li class="<%= @tab == :standard ? "active" : "" %>">
-                          <a href="<%= standards_path %>"><% if @tab == :standard %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Standards</a>
-                        </li>
-                        <li class="<%= @tab == :division ? "active" : "" %>">
-                          <a href="<%= divisions_path %>"><% if @tab == :division %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Divisions</a>
                         </li>
                         <li class="<%= @tab == "teacher" ? "active" : "" %>">
                           <a href="<%= users_path(:user_type => "teacher") %>"><% if @tab == "teacher" %> <i class="glyphicon glyphicon-chevron-right"></i> <% end %> Teachers</a>

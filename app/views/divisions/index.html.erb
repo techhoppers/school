@@ -1,28 +1,55 @@
 <div class="row">
+  <div class="breadcrumb">
+    <li><%= link_to "Academics", academics_path %></li>
+    <li><%= link_to "Standards", standards_path(:academic_id => @standard.academic_id) %></li>
+    <li><%= link_to "Divisions", "#" %></li>
+  </div>
+  <div class="panel panel-default bootstrap-admin-no-table-panel">
+        <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+          <%= form_for(@division, :html => {:class => "form-horizontal"}) do |f| %>
+            <div class="form-group">
+              <%= f.label :email, "*Division Name:", :class => "col-lg-2 control-label" %>
+              <div class="col-lg-5">
+                <%= f.text_field :division_name, :autofocus => true, :class => "form-control" %>
+                <%= f.hidden_field :standard_id %>
+              </div>
+              <div class="col-lg-2">
+                <%= f.submit "Save/Update", :class => "btn btn-primary"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  <% if @divisions && @divisions.size > 0 %>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <div class="text-muted bootstrap-admin-box-title">Divisions</div>
-      <div class="pull-right"><span class="badge">17</span></div>
+      <div class="text-muted bootstrap-admin-box-title">Divisions [Standard: <%= @standard.standard_name %>]</div>
     </div>
     <div class="bootstrap-admin-panel-content">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Standard</th>                                                
+            <th>Division Name</th>
             <th>Number of Students</th>
           </tr>
         </thead>
         <tbody>
+          <% @divisions.each_with_index do |division, index|  %>
           <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td><%= index + 1 %></td>
+            <td><%= division.division_name %></td>
+            <td>5</td>
+            <td>
+              <%= link_to "Edit" %> |   
+              <%= link_to "Delete" %> | 
+              <%= link_to "Students" %>
+            </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
   </div>
+  <% end %>
 </div>

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127084354) do
+ActiveRecord::Schema.define(version: 20140209072118) do
+
+  create_table "academics", force: true do |t|
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "division_teachers", force: true do |t|
     t.integer  "user_id"
@@ -29,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140127084354) do
   end
 
   create_table "standards", force: true do |t|
+    t.integer  "academic_id"
     t.string   "standard_name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -56,6 +63,8 @@ ActiveRecord::Schema.define(version: 20140127084354) do
     t.string   "phone1"
     t.string   "phone2"
     t.string   "role"
+    t.string   "roll_no_starts"
+    t.integer  "roll_no"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -10,6 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :phone1
       t.string :phone2
       t.string :role
+      t.string :roll_no_starts
+      t.integer :roll_no
 
       ## Recoverable
       t.string   :reset_password_token

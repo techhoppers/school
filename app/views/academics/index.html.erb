@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="panel panel-default bootstrap-admin-no-table-panel">
+      <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+        <%= form_for(@academic, :html => {:class => "form-horizontal"}) do |f| %>
+          <div class="form-group">
+            <%= f.label :email, "*Year:", :class => "col-lg-2 control-label" %>
+            <div class="col-lg-5">
+              <%= f.text_field :year, :autofocus => true, :class => "form-control" %>
+            </div>
+            <div class="col-lg-2">
+              <%= f.submit "Create/Update", :class => "btn btn-primary"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="text-muted bootstrap-admin-box-title">Academics</div>
+    </div>
+    <div class="bootstrap-admin-panel-content">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Year</th>
+            <th></th>                                                
+          </tr>
+        </thead>
+        <tbody>
+          <% @academics.each_with_index do |academic, index| %>
+          <tr>
+            <td><%= index + 1  %></td>
+            <td><%= academic.year %></td>
+            <td>
+              <%= link_to "Edit" %> | 
+              <%= link_to "Delete"  %> | 
+              <%= link_to "Standards", standards_path(:academic_id => academic) %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

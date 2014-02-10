@@ -1,4 +1,6 @@
 SchoolApp::Application.routes.draw do
+  resources :academics
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,17 +9,19 @@ SchoolApp::Application.routes.draw do
    root 'home#index'
 
    resources :admin
-   resources :standards
+   resources :standards do
+     post 'create'
+   end
    resources :divisions
    resources :subjects
    
    resources :users do
-   collection do
-      get 'index'
-      post 'create'
-      post 'csv_import'
-      get 'bulk_upload'
-    end
+     collection do
+        get 'index'
+        post 'create'
+        post 'csv_import'
+        get 'bulk_upload'
+      end
    end
 
   # Example of regular route:

@@ -1,24 +1,55 @@
 <div class="row">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <div class="text-muted bootstrap-admin-box-title">Standards</div>
-      <div class="pull-right"><span class="badge">17</span></div>
-    </div>
-    <div class="bootstrap-admin-panel-content">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>                                                
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="breadcrumb">
+    <li><%= link_to "Academics", academics_path %></li>
+    <li class="active"><%= link_to "Standards", "#" %></li>
   </div>
+  <div class="panel panel-default bootstrap-admin-no-table-panel">
+        <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+          <%= form_for(@standard, :html => {:class => "form-horizontal"}) do |f| %>
+            <div class="form-group">
+              <%= f.label :email, "*Standard Name:", :class => "col-lg-2 control-label" %>
+              <div class="col-lg-5">
+                <%= f.text_field :standard_name, :autofocus => true, :class => "form-control" %>
+                <%= f.hidden_field :academic_id %>
+              </div>
+              <div class="col-lg-2">
+                <%= f.submit "Save/Update changes", :class => "btn btn-primary"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  <% if @standards && @standards.size > 0 %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="text-muted bootstrap-admin-box-title">Standards [Academic: <%= @academic.year %>]</div>
+      </div>
+      <div class="bootstrap-admin-panel-content">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Standard Name</th>                                                
+              <th>No. of Divisions</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @standards.each_with_index do |standard, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= standard.standard_name %></td>
+              <td>4</td>
+              <td>
+                  <%= link_to "Edit"  %> | 
+                  <%= link_to "Delete"  %> | 
+                  <%= link_to "Divisions", divisions_path(:standard_id => standard.id) %>
+              </td>
+            </tr>
+            <% end  %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
 </div>
