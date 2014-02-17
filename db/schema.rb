@@ -59,12 +59,14 @@ ActiveRecord::Schema.define(version: 20140209072118) do
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "first_name"
+    t.string   "middle_name"
     t.string   "last_name"
     t.string   "phone1"
     t.string   "phone2"
     t.string   "role"
-    t.string   "roll_no_starts"
-    t.integer  "roll_no"
+    t.string   "reg_no_starts"
+    t.integer  "reg_no"
+    t.string   "roll_no"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

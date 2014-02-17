@@ -23,7 +23,7 @@
   <% if @divisions && @divisions.size > 0 %>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <div class="text-muted bootstrap-admin-box-title">Divisions [Standard: <%= @standard.standard_name %>]</div>
+      <div class="text-muted bootstrap-admin-box-title">Divisions [Academic: <%= @standard.academic.year %>,  Standard: <%= @standard.standard_name %>]</div>
     </div>
     <div class="bootstrap-admin-panel-content">
       <table class="table table-striped">
@@ -43,7 +43,7 @@
             <td>
               <%= link_to "Edit" %> |   
               <%= link_to "Delete" %> | 
-              <%= link_to "Students" %>
+              <%= link_to "Students", users_path(:user_type => "student", :division => division) %>
             </td>
           </tr>
           <% end %>

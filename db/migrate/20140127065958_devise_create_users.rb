@@ -6,12 +6,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :encrypted_password, :null => false, :default => ""
       
       t.string :first_name
+      t.string :middle_name
       t.string :last_name
       t.string :phone1
       t.string :phone2
       t.string :role
-      t.string :roll_no_starts
-      t.integer :roll_no
+      t.string :reg_no_starts
+      t.integer :reg_no
+      t.string :roll_no
 
       ## Recoverable
       t.string   :reset_password_token
